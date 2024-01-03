@@ -4,7 +4,9 @@ function Tryout() {
   return (
     <>
       <TextField variant="outlined" label="Outlined" color="secondary" />
-      <Button variant="contained">Hello world</Button>
+      <Button variant="outlined" color="secondary">
+        Hello world
+      </Button>
     </>
   );
 }
