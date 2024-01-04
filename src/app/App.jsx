@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Root } from '../layouts/Root';
 import { Home } from '../pages/Home';
 import { Employees } from '../pages/Employees';
@@ -30,12 +32,15 @@ const router = createBrowserRouter(
   ),
 );
 
-function App() {
+function App({ children }) {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        {children}
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </LocalizationProvider>
   );
 }
 

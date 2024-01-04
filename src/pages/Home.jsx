@@ -1,13 +1,16 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import Tryout from '../components/Tryout';
+import { Box } from '@mui/material';
+import { FormView } from '../features/form/FormView';
 
 export const Home = () => {
   return (
     <>
-      <Tryout />
-      <NavLink to="/employees" style={{ textDecoration: 'none' }}>
-        View current employees
-      </NavLink>
+      <FormView />
+      <Box>
+        <NavLink to="/employees" style={{ textDecoration: 'none' }}>
+          View current employees
+        </NavLink>
+      </Box>
     </>
   );
 };
