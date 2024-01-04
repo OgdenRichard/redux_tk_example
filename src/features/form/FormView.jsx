@@ -1,10 +1,17 @@
-import { Stack, Button, FormControl, TextField } from '@mui/material';
+import {
+  Stack,
+  Button,
+  FormControl,
+  FormLabel,
+  TextField,
+} from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
 
 export const FormView = () => {
   return (
     <>
       <FormControl>
+        <FormLabel sx={{ mb: 2 }}>Create Employee</FormLabel>
         <TextField
           variant="outlined"
           label="First Name"
@@ -28,6 +35,7 @@ export const FormView = () => {
             borderColor: 'grey.500',
           }}
         >
+          <FormLabel sx={{ mb: 2 }}>Address</FormLabel>
           <TextField
             variant="outlined"
             label="Street"
