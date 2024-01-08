@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
 import { DropdownSelect } from '../../components/DropdownSelect';
-import { states } from '../../data/states';
+import { states, departments } from '../../data/selectValues';
 
 export const FormView = () => {
   return (
@@ -79,11 +79,7 @@ export const FormView = () => {
             spacing={2}
             sx={{ mb: 2 }}
           >
-            <DropdownSelect
-              data={states}
-              datakey="abbreviation"
-              label="state"
-            />
+            <DropdownSelect data={states} datakey="key" label="state" />
             <TextField
               variant="outlined"
               type="number"
@@ -93,7 +89,8 @@ export const FormView = () => {
             />
           </Stack>
         </Stack>
-        <Button variant="contained" color="primary">
+        <DropdownSelect data={departments} datakey="key" label="department" />
+        <Button variant="contained" color="primary" sx={{ mt: 2 }}>
           Save
         </Button>
       </FormControl>

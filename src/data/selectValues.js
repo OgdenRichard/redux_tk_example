@@ -1,238 +1,246 @@
 export const states = [
   {
     name: 'Alabama',
-    abbreviation: 'AL',
+    key: 'AL',
   },
   {
     name: 'Alaska',
-    abbreviation: 'AK',
+    key: 'AK',
   },
   {
     name: 'American Samoa',
-    abbreviation: 'AS',
+    key: 'AS',
   },
   {
     name: 'Arizona',
-    abbreviation: 'AZ',
+    key: 'AZ',
   },
   {
     name: 'Arkansas',
-    abbreviation: 'AR',
+    key: 'AR',
   },
   {
     name: 'California',
-    abbreviation: 'CA',
+    key: 'CA',
   },
   {
     name: 'Colorado',
-    abbreviation: 'CO',
+    key: 'CO',
   },
   {
     name: 'Connecticut',
-    abbreviation: 'CT',
+    key: 'CT',
   },
   {
     name: 'Delaware',
-    abbreviation: 'DE',
+    key: 'DE',
   },
   {
     name: 'District Of Columbia',
-    abbreviation: 'DC',
+    key: 'DC',
   },
   {
     name: 'Federated States Of Micronesia',
-    abbreviation: 'FM',
+    key: 'FM',
   },
   {
     name: 'Florida',
-    abbreviation: 'FL',
+    key: 'FL',
   },
   {
     name: 'Georgia',
-    abbreviation: 'GA',
+    key: 'GA',
   },
   {
     name: 'Guam',
-    abbreviation: 'GU',
+    key: 'GU',
   },
   {
     name: 'Hawaii',
-    abbreviation: 'HI',
+    key: 'HI',
   },
   {
     name: 'Idaho',
-    abbreviation: 'ID',
+    key: 'ID',
   },
   {
     name: 'Illinois',
-    abbreviation: 'IL',
+    key: 'IL',
   },
   {
     name: 'Indiana',
-    abbreviation: 'IN',
+    key: 'IN',
   },
   {
     name: 'Iowa',
-    abbreviation: 'IA',
+    key: 'IA',
   },
   {
     name: 'Kansas',
-    abbreviation: 'KS',
+    key: 'KS',
   },
   {
     name: 'Kentucky',
-    abbreviation: 'KY',
+    key: 'KY',
   },
   {
     name: 'Louisiana',
-    abbreviation: 'LA',
+    key: 'LA',
   },
   {
     name: 'Maine',
-    abbreviation: 'ME',
+    key: 'ME',
   },
   {
     name: 'Marshall Islands',
-    abbreviation: 'MH',
+    key: 'MH',
   },
   {
     name: 'Maryland',
-    abbreviation: 'MD',
+    key: 'MD',
   },
   {
     name: 'Massachusetts',
-    abbreviation: 'MA',
+    key: 'MA',
   },
   {
     name: 'Michigan',
-    abbreviation: 'MI',
+    key: 'MI',
   },
   {
     name: 'Minnesota',
-    abbreviation: 'MN',
+    key: 'MN',
   },
   {
     name: 'Mississippi',
-    abbreviation: 'MS',
+    key: 'MS',
   },
   {
     name: 'Missouri',
-    abbreviation: 'MO',
+    key: 'MO',
   },
   {
     name: 'Montana',
-    abbreviation: 'MT',
+    key: 'MT',
   },
   {
     name: 'Nebraska',
-    abbreviation: 'NE',
+    key: 'NE',
   },
   {
     name: 'Nevada',
-    abbreviation: 'NV',
+    key: 'NV',
   },
   {
     name: 'New Hampshire',
-    abbreviation: 'NH',
+    key: 'NH',
   },
   {
     name: 'New Jersey',
-    abbreviation: 'NJ',
+    key: 'NJ',
   },
   {
     name: 'New Mexico',
-    abbreviation: 'NM',
+    key: 'NM',
   },
   {
     name: 'New York',
-    abbreviation: 'NY',
+    key: 'NY',
   },
   {
     name: 'North Carolina',
-    abbreviation: 'NC',
+    key: 'NC',
   },
   {
     name: 'North Dakota',
-    abbreviation: 'ND',
+    key: 'ND',
   },
   {
     name: 'Northern Mariana Islands',
-    abbreviation: 'MP',
+    key: 'MP',
   },
   {
     name: 'Ohio',
-    abbreviation: 'OH',
+    key: 'OH',
   },
   {
     name: 'Oklahoma',
-    abbreviation: 'OK',
+    key: 'OK',
   },
   {
     name: 'Oregon',
-    abbreviation: 'OR',
+    key: 'OR',
   },
   {
     name: 'Palau',
-    abbreviation: 'PW',
+    key: 'PW',
   },
   {
     name: 'Pennsylvania',
-    abbreviation: 'PA',
+    key: 'PA',
   },
   {
     name: 'Puerto Rico',
-    abbreviation: 'PR',
+    key: 'PR',
   },
   {
     name: 'Rhode Island',
-    abbreviation: 'RI',
+    key: 'RI',
   },
   {
     name: 'South Carolina',
-    abbreviation: 'SC',
+    key: 'SC',
   },
   {
     name: 'South Dakota',
-    abbreviation: 'SD',
+    key: 'SD',
   },
   {
     name: 'Tennessee',
-    abbreviation: 'TN',
+    key: 'TN',
   },
   {
     name: 'Texas',
-    abbreviation: 'TX',
+    key: 'TX',
   },
   {
     name: 'Utah',
-    abbreviation: 'UT',
+    key: 'UT',
   },
   {
     name: 'Vermont',
-    abbreviation: 'VT',
+    key: 'VT',
   },
   {
     name: 'Virgin Islands',
-    abbreviation: 'VI',
+    key: 'VI',
   },
   {
     name: 'Virginia',
-    abbreviation: 'VA',
+    key: 'VA',
   },
   {
     name: 'Washington',
-    abbreviation: 'WA',
+    key: 'WA',
   },
   {
     name: 'West Virginia',
-    abbreviation: 'WV',
+    key: 'WV',
   },
   {
     name: 'Wisconsin',
-    abbreviation: 'WI',
+    key: 'WI',
   },
   {
     name: 'Wyoming',
-    abbreviation: 'WY',
+    key: 'WY',
   },
+];
+
+export const departments = [
+  { key: 'sl', name: 'Sales' },
+  { key: 'mk', name: 'Marketing' },
+  { key: 'en', name: 'Engineering' },
+  { key: 'hr', name: 'Human ressources' },
+  { key: 'lg', name: 'Legal' },
 ];
