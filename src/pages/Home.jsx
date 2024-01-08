@@ -5,7 +5,7 @@ import { FormView } from '../features/form/FormView';
 export const Home = () => {
   return (
     <>
-      <h2 className="home__title">HRnet</h2>
+      <h2>HRnet</h2>
       <Box sx={{ mb: 2 }}>
         <NavLink to="/employees" style={{ textDecoration: 'none' }}>
           View current employees

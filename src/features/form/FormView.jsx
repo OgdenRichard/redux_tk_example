@@ -12,20 +12,38 @@ export const FormView = () => {
     <>
       <FormControl>
         <FormLabel sx={{ mb: 2 }}>Create Employee</FormLabel>
-        <TextField
-          variant="outlined"
-          label="First Name"
-          color="secondary"
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
           sx={{ mb: 2 }}
-        />
-        <TextField
-          variant="outlined"
-          label="Last Name"
-          color="secondary"
+        >
+          <TextField
+            variant="outlined"
+            label="First Name"
+            color="secondary"
+            fullWidth
+          />
+          <TextField
+            variant="outlined"
+            label="Last Name"
+            color="secondary"
+            fullWidth
+          />
+        </Stack>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
           sx={{ mb: 2 }}
-        />
-        <DatePicker label="Date of Birth" sx={{ mb: 2 }} />
-        <DatePicker label="Start Date" sx={{ mb: 2 }} />
+        >
+          <DatePicker
+            label="Date of Birth"
+            slotProps={{ textField: { fullWidth: true } }}
+          />
+          <DatePicker
+            label="Start Date"
+            slotProps={{ textField: { fullWidth: true } }}
+          />
+        </Stack>
         <Stack
           sx={{
             border: 1,
@@ -36,18 +54,42 @@ export const FormView = () => {
           }}
         >
           <FormLabel sx={{ mb: 2 }}>Address</FormLabel>
-          <TextField
-            variant="outlined"
-            label="Street"
-            color="secondary"
+          <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={2}
             sx={{ mb: 2 }}
-          />
-          <TextField
-            variant="outlined"
-            label="City"
-            color="secondary"
+          >
+            <TextField
+              variant="outlined"
+              label="Street"
+              color="secondary"
+              fullWidth
+            />
+            <TextField
+              variant="outlined"
+              label="City"
+              color="secondary"
+              fullWidth
+            />
+          </Stack>
+          <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={2}
             sx={{ mb: 2 }}
-          />
+          >
+            <TextField
+              variant="outlined"
+              label="State"
+              color="secondary"
+              fullWidth
+            />
+            <TextField
+              variant="outlined"
+              label="Zip Code"
+              color="secondary"
+              fullWidth
+            />
+          </Stack>
         </Stack>
         <Button variant="contained" color="primary">
           Save
