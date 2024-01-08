@@ -6,6 +6,8 @@ import {
   TextField,
 } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
+import { DropdownSelect } from '../../components/DropdownSelect';
+import { states } from '../../data/states';
 
 export const FormView = () => {
   return (
@@ -77,14 +79,14 @@ export const FormView = () => {
             spacing={2}
             sx={{ mb: 2 }}
           >
-            <TextField
-              variant="outlined"
-              label="State"
-              color="secondary"
-              fullWidth
+            <DropdownSelect
+              data={states}
+              datakey="abbreviation"
+              label="state"
             />
             <TextField
               variant="outlined"
+              type="number"
               label="Zip Code"
               color="secondary"
               fullWidth
