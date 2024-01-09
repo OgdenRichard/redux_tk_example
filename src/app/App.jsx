@@ -14,6 +14,7 @@ import { Home } from '../pages/Home';
 import { Employees } from '../pages/Employees';
 import { ErrorPage } from '../pages/ErrorPage';
 import '../style/App.css';
+import 'dayjs/locale/fr';
 
 const darkTheme = createTheme({
   palette: {
@@ -36,7 +37,7 @@ function App({ children }) {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="fr">
         <RouterProvider router={router} />
         {children}
       </LocalizationProvider>

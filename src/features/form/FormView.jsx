@@ -24,9 +24,6 @@ import {
 
 export const FormView = () => {
   const dispatch = useDispatch();
-  const handleDate = (value) => {
-    return value ? value.toISOString(true) : null;
-  };
   return (
     <>
       <FormControl>
@@ -129,7 +126,12 @@ export const FormView = () => {
           label="department"
           reducer={setDepartment}
         />
-        <Button variant="contained" color="primary" sx={{ mt: 2 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ mt: 2 }}
+          onClick={() => dispatch(submitForm())}
+        >
           Save
         </Button>
       </FormControl>
