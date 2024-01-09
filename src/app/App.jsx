@@ -34,13 +34,13 @@ const router = createBrowserRouter(
 
 function App({ children }) {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        {children}
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <RouterProvider router={router} />
-      </ThemeProvider>
-    </LocalizationProvider>
+        {children}
+      </LocalizationProvider>
+    </ThemeProvider>
   );
 }
 

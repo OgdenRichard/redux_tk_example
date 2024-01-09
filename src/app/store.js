@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
-import cakeReducer from "../features/cake/cakeSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import formReducer from '../features/form/formSlice';
 
 const store = configureStore({
   reducer: {
-    cake: cakeReducer,
+    form: formReducer,
   },
 });
 

@@ -5,11 +5,25 @@ import {
   FormLabel,
   TextField,
 } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import { DatePicker } from '@mui/x-date-pickers';
 import { DropdownSelect } from '../../components/DropdownSelect';
 import { states, departments } from '../../data/selectValues';
+import {
+  setFirstName,
+  setLastName,
+  setBirthDate,
+  setStartDate,
+  setStreet,
+  setCity,
+  setState,
+  setZipCode,
+  setDepartment,
+  submitForm,
+} from './formSlice';
 
 export const FormView = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <FormControl>
@@ -24,6 +38,7 @@ export const FormView = () => {
             label="First Name"
             color="secondary"
             fullWidth
+            onChange={(e) => dispatch(setFirstName(e.target.value))}
           />
           <TextField
             variant="outlined"

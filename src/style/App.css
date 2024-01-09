@@ -23,6 +23,14 @@ header {
   font-family: copperplate, 'Roboto', 'Arial';
 }
 
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .header__logo > img {
   width: 9em;
   margin-bottom: 0.5em;
