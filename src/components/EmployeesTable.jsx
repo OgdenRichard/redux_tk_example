@@ -10,7 +10,7 @@ import {
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
 import { useSelector } from 'react-redux';
-import { COLUMNS } from '../data/employeesColumns';
+import COLUMNS from '../data/employeesColumns';
 
 export const EmployeesTable = () => {
   const employees = useSelector((state) => state.employees.data);

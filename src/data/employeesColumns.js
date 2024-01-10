@@ -1,4 +1,6 @@
-export const COLUMNS = [
+import { format } from 'date-fns';
+
+const COLUMNS = [
   {
     Header: 'First Name',
     accessor: 'firstname',
@@ -10,6 +12,9 @@ export const COLUMNS = [
   {
     Header: 'Start Date',
     accessor: 'startdate',
+    Cell: ({ value }) => {
+      return format(new Date(value), 'dd/MM/yyyy');
+    },
   },
   {
     Header: 'Department',
@@ -18,6 +23,9 @@ export const COLUMNS = [
   {
     Header: 'Date of birth',
     accessor: 'birthdate',
+    Cell: ({ value }) => {
+      return format(new Date(value), 'dd/MM/yyyy');
+    },
   },
   {
     Header: 'Street',
@@ -36,3 +44,5 @@ export const COLUMNS = [
     accessor: 'zipcode',
   },
 ];
+
+export default COLUMNS;
