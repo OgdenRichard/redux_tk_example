@@ -26,6 +26,7 @@ export const FormView = () => {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.employees.formdata.firstname);
   const birthdate = useSelector((state) => state.employees.formdata.birthdate);
+  const startdate = useSelector((state) => state.employees.formdata.startdate);
   return (
     <>
       <FormControl>
@@ -59,7 +60,7 @@ export const FormView = () => {
           <DatePicker
             label="Date of Birth"
             slotProps={{ textField: { fullWidth: true, readOnly: true } }}
-            value={birthdate || null}
+            // value={birthdate || null}
             onAccept={(val) =>
               dispatch(setBirthDate(val ? val.toISOString(true) : null))
             }
@@ -67,7 +68,8 @@ export const FormView = () => {
           <DatePicker
             label="Start Date"
             slotProps={{ textField: { fullWidth: true, readOnly: true } }}
-            onChange={(val) =>
+            // value={startdate || null}
+            onAccept={(val) =>
               dispatch(setStartDate(val ? val.toISOString(true) : null))
             }
           />

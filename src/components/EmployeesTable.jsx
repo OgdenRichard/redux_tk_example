@@ -14,7 +14,7 @@ export const EmployeesTable = () => {
   return (
     <>
       <TableContainer component={Paper}>
-        <Table>
+        <Table sx={{ minWidth: 650 }}>
           <TableHead>
             <TableRow>
               <TableCell>First Name</TableCell>
@@ -29,20 +29,22 @@ export const EmployeesTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {employees.length &&
-              employees.map((employee) => (
-                <TableRow key={employee.id}>
-                  <TableCell>{employee.firstname}</TableCell>
-                  <TableCell>{employee.lastname}</TableCell>
-                  <TableCell>{employee.startdate}</TableCell>
-                  <TableCell>{employee.department}</TableCell>
-                  <TableCell>{employee.birthdate}</TableCell>
-                  <TableCell>{employee.street}</TableCell>
-                  <TableCell>{employee.city}</TableCell>
-                  <TableCell>{employee.state}</TableCell>
-                  <TableCell>{employee.zipcode}</TableCell>
-                </TableRow>
-              ))}
+            {employees.map((employee) => (
+              <TableRow
+                key={employee.id}
+                sx={{ '& td': { borderRight: 0, borderLeft: 0 } }}
+              >
+                <TableCell>{employee.firstname}</TableCell>
+                <TableCell align="right">{employee.lastname}</TableCell>
+                <TableCell align="right">{employee.startdate}</TableCell>
+                <TableCell align="right">{employee.department}</TableCell>
+                <TableCell align="right">{employee.birthdate}</TableCell>
+                <TableCell align="right">{employee.street}</TableCell>
+                <TableCell align="right">{employee.city}</TableCell>
+                <TableCell align="right">{employee.state}</TableCell>
+                <TableCell align="right">{employee.zipcode}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
