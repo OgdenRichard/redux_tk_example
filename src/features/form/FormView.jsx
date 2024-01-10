@@ -5,7 +5,7 @@ import {
   FormLabel,
   TextField,
 } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { DatePicker } from '@mui/x-date-pickers';
 import { DropdownSelect } from '../../components/DropdownSelect';
 import { states, departments } from '../../data/selectValues';
@@ -24,6 +24,8 @@ import {
 
 export const FormView = () => {
   const dispatch = useDispatch();
+  const firstname = useSelector((state) => state.employees.formdata.firstname);
+  const birthdate = useSelector((state) => state.employees.formdata.birthdate);
   return (
     <>
       <FormControl>
@@ -37,6 +39,7 @@ export const FormView = () => {
             variant="outlined"
             label="First Name"
             color="secondary"
+            value={firstname || ''}
             fullWidth
             onChange={(e) => dispatch(setFirstName(e.target.value))}
           />
@@ -56,6 +59,7 @@ export const FormView = () => {
           <DatePicker
             label="Date of Birth"
             slotProps={{ textField: { fullWidth: true, readOnly: true } }}
+            value={birthdate || null}
             onAccept={(val) =>
               dispatch(setBirthDate(val ? val.toISOString(true) : null))
             }

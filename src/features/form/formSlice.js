@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  rowId: 0,
   formdata: {},
-  employees: [],
+  data: [],
 };
 
 const formSlice = createSlice({
-  name: 'form',
+  name: 'employees',
   initialState,
   reducers: {
     setFirstName: (state, action) => {
@@ -37,7 +38,9 @@ const formSlice = createSlice({
       state.formdata.department = action.payload;
     },
     submitForm: (state) => {
-      state.employees.push(state.formdata);
+      state.rowId += 1;
+      state.formdata.id = state.rowId;
+      state.data.push(state.formdata);
       state.formdata = {};
     },
   },

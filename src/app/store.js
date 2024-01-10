@@ -3,7 +3,7 @@ import formReducer from '../features/form/formSlice';
 
 const store = configureStore({
   reducer: {
-    form: formReducer,
+    employees: formReducer,
   },
 });
 

@@ -1,10 +1,10 @@
-import { Card } from '@mui/material';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { EmployeesTable } from '../components/EmployeesTable';
 
 export const Employees = () => {
   return (
     <>
-      <Card variant="outlined">Employees table</Card>
+      <EmployeesTable />
       <NavLink to="/home" style={{ textDecoration: 'none' }}>
         Home
       </NavLink>
