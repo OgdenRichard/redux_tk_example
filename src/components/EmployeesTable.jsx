@@ -30,10 +30,11 @@ export const EmployeesTable = () => {
       <TableContainer component={Paper}>
         <Table {...getTableProps()} sx={{ minWidth: 650 }}>
           <TableHead>
-            {headerGroups.map((headerGroup) => (
-              <TableRow {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
+            {headerGroups.map((headerGroup, hIndex) => (
+              <TableRow key={hIndex} {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column, cIndex) => (
                   <TableCell
+                    key={cIndex}
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                   >
                     {column.render('Header')}
@@ -50,10 +51,10 @@ export const EmployeesTable = () => {
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <TableRow {...row.getRowProps()}>
-                  {row.cells.map((cell) => {
+                <TableRow key={row.id} {...row.getRowProps()}>
+                  {row.cells.map((cell, index) => {
                     return (
-                      <TableCell {...cell.getCellProps()}>
+                      <TableCell key={index} {...cell.getCellProps()}>
                         {cell.render('Cell')}
                       </TableCell>
                     );

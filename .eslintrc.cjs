@@ -18,6 +18,8 @@ module.exports = {
     'prettier/prettier': 'error',
     'no-param-reassign': 0,
     'import/prefer-default-export': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/no-array-index-key': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
