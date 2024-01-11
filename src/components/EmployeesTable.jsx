@@ -40,7 +40,7 @@ export const EmployeesTable = () => {
 
   return (
     <>
-      <Box>
+      <Box display="flex" flexDirection="column">
         <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
         <TableContainer component={Paper}>
           <Table {...getTableProps()} sx={{ minWidth: 650, border: 0 }}>

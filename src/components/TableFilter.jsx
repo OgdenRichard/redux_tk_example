@@ -7,8 +7,9 @@ export const TableFilter = ({ filter, setFilter }) => {
         label="Search"
         value={filter || ''}
         variant="outlined"
+        size="small"
         onChange={(e) => setFilter(e.target.value)}
-        sx={{ mb: 2 }}
+        sx={{ mb: 2, width: '20%', ml: 'auto' }}
       />
     </>
   );
