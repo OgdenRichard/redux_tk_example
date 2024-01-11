@@ -1,0 +1,15 @@
+import { TextField } from '@mui/material';
+
+export const TableFilter = ({ filter, setFilter }) => {
+  return (
+    <>
+      <TextField
+        label="Search"
+        value={filter || ''}
+        variant="outlined"
+        onChange={(e) => setFilter(e.target.value)}
+        sx={{ mb: 2 }}
+      />
+    </>
+  );
+};
