@@ -6,9 +6,10 @@ import {
   TableRow,
   TableCell,
   Paper,
+  TableSortLabel,
 } from '@mui/material';
 import { useMemo } from 'react';
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import { useSelector } from 'react-redux';
 import COLUMNS from '../data/employeesColumns';
 
@@ -16,12 +17,14 @@ export const EmployeesTable = () => {
   const employees = useSelector((state) => state.employees.data);
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => employees, [employees]);
-  const tableInstance = useTable({
-    columns,
-    data,
-  });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+    useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy,
+    );
   return (
     <>
       <TableContainer component={Paper}>
@@ -30,23 +33,18 @@ export const EmployeesTable = () => {
             {headerGroups.map((headerGroup) => (
               <TableRow {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <TableCell {...column.getHeaderProps()}>
+                  <TableCell
+                    {...column.getHeaderProps(column.getSortByToggleProps())}
+                  >
                     {column.render('Header')}
+                    <TableSortLabel
+                      active={column.isSorted}
+                      direction={column.isSortedDesc ? 'desc' : 'asc'}
+                    />
                   </TableCell>
                 ))}
               </TableRow>
             ))}
-            {/* <TableRow>
-              <TableCell>First Name</TableCell>
-              <TableCell>Last Name</TableCell>
-              <TableCell>Start Date</TableCell>
-              <TableCell>Department</TableCell>
-              <TableCell>Date of Birth</TableCell>
-              <TableCell>Street</TableCell>
-              <TableCell>City</TableCell>
-              <TableCell>State</TableCell>
-              <TableCell>Zip Code</TableCell>
-            </TableRow> */}
           </TableHead>
           <TableBody {...getTableBodyProps()}>
             {rows.map((row) => {
@@ -63,22 +61,6 @@ export const EmployeesTable = () => {
                 </TableRow>
               );
             })}
-            {/* {employees.map((employee) => (
-              <TableRow
-                key={employee.id}
-                sx={{ '& td': { borderRight: 0, borderLeft: 0 } }}
-              >
-                <TableCell>{employee.firstname}</TableCell>
-                <TableCell align="right">{employee.lastname}</TableCell>
-                <TableCell align="right">{employee.startdate}</TableCell>
-                <TableCell align="right">{employee.department}</TableCell>
-                <TableCell align="right">{employee.birthdate}</TableCell>
-                <TableCell align="right">{employee.street}</TableCell>
-                <TableCell align="right">{employee.city}</TableCell>
-                <TableCell align="right">{employee.state}</TableCell>
-                <TableCell align="right">{employee.zipcode}</TableCell>
-              </TableRow>
-            ))} */}
           </TableBody>
         </Table>
       </TableContainer>

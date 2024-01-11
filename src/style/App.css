@@ -23,7 +23,9 @@ header {
   font-family: copperplate, 'Roboto', 'Arial';
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
 }
 
@@ -34,4 +36,8 @@ table {
 .header__logo > img {
   width: 9em;
   margin-bottom: 0.5em;
+}
+
+.sort {
+  margin-left: 16px
 }
