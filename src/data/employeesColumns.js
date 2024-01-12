@@ -13,7 +13,7 @@ const COLUMNS = [
     Header: 'Start Date',
     accessor: 'startdate',
     Cell: ({ value }) => {
-      return format(new Date(value), 'dd/MM/yyyy');
+      return value ? format(new Date(value), 'dd/MM/yyyy') : '';
     },
   },
   {
@@ -24,7 +24,7 @@ const COLUMNS = [
     Header: 'Date of birth',
     accessor: 'birthdate',
     Cell: ({ value }) => {
-      return format(new Date(value), 'dd/MM/yyyy');
+      return value ? format(new Date(value), 'dd/MM/yyyy') : '';
     },
   },
   {

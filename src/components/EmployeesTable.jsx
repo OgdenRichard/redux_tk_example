@@ -8,6 +8,7 @@ import {
   Paper,
   TableSortLabel,
   Box,
+  Pagination,
 } from '@mui/material';
 import { useMemo } from 'react';
 import { useTable, useSortBy, useGlobalFilter } from 'react-table';
@@ -85,6 +86,12 @@ export const EmployeesTable = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <Pagination
+          count={10}
+          variant="outlined"
+          shape="rounded"
+          sx={{ mt: 2 }}
+        />
       </Box>
     </>
   );
