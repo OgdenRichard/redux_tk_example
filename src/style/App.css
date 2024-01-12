@@ -33,11 +33,20 @@ table {
   border-collapse: collapse;
 }
 
+.table_container {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+
 .header__logo > img {
   width: 9em;
   margin-bottom: 0.5em;
 }
 
 .sort {
-  margin-left: 16px
+  margin-left: 16px;
 }

@@ -43,55 +43,59 @@ export const EmployeesTable = () => {
     <>
       <Box display="flex" flexDirection="column">
         <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
-        <TableContainer component={Paper}>
-          <Table {...getTableProps()} sx={{ minWidth: 650, border: 0 }}>
-            <TableHead>
-              {headerGroups.map((headerGroup, hIndex) => (
-                <TableRow key={hIndex} {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column, cIndex) => (
-                    <TableCell
-                      key={cIndex}
-                      {...column.getHeaderProps(column.getSortByToggleProps())}
-                      sx={{ border: 0 }}
-                    >
-                      {column.render('Header')}
-                      <TableSortLabel
-                        active={column.isSorted}
-                        direction={column.isSortedDesc ? 'desc' : 'asc'}
-                      />
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableHead>
-            <TableBody {...getTableBodyProps()}>
-              {rows.map((row) => {
-                prepareRow(row);
-                return (
-                  <TableRow
-                    key={row.id}
-                    {...row.getRowProps()}
-                    sx={{ '& td': { borderRight: 0, borderLeft: 0 } }}
-                  >
-                    {row.cells.map((cell, index) => {
-                      return (
-                        <TableCell key={index} {...cell.getCellProps()}>
-                          {cell.render('Cell')}
-                        </TableCell>
-                      );
-                    })}
+        <Box sx={{ width: '100%', display: 'table', tableLayout: 'fixed' }}>
+          <TableContainer component={Paper}>
+            <Table {...getTableProps()} sx={{ border: 0 }}>
+              <TableHead>
+                {headerGroups.map((headerGroup, hIndex) => (
+                  <TableRow key={hIndex} {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map((column, cIndex) => (
+                      <TableCell
+                        key={cIndex}
+                        {...column.getHeaderProps(
+                          column.getSortByToggleProps(),
+                        )}
+                        sx={{ border: 0 }}
+                      >
+                        {column.render('Header')}
+                        <TableSortLabel
+                          active={column.isSorted}
+                          direction={column.isSortedDesc ? 'desc' : 'asc'}
+                        />
+                      </TableCell>
+                    ))}
                   </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Pagination
-          count={10}
-          variant="outlined"
-          shape="rounded"
-          sx={{ mt: 2 }}
-        />
+                ))}
+              </TableHead>
+              <TableBody {...getTableBodyProps()}>
+                {rows.map((row) => {
+                  prepareRow(row);
+                  return (
+                    <TableRow
+                      key={row.id}
+                      {...row.getRowProps()}
+                      sx={{ '& td': { borderRight: 0, borderLeft: 0 } }}
+                    >
+                      {row.cells.map((cell, index) => {
+                        return (
+                          <TableCell key={index} {...cell.getCellProps()}>
+                            {cell.render('Cell')}
+                          </TableCell>
+                        );
+                      })}
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Pagination
+            count={10}
+            variant="outlined"
+            shape="rounded"
+            sx={{ mt: 2 }}
+          />
+        </Box>
       </Box>
     </>
   );
