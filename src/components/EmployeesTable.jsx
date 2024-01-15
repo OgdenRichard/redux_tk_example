@@ -13,6 +13,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
+  TablePagination,
 } from '@mui/material';
 import { useMemo } from 'react';
 import {
@@ -37,6 +38,7 @@ export const EmployeesTable = () => {
     gotoPage,
     prepareRow,
     setPageSize,
+    pageCount,
     state,
     setGlobalFilter,
   } = useTable(
@@ -53,6 +55,16 @@ export const EmployeesTable = () => {
 
   const handleChange = (event, value) => {
     gotoPage(value - 1);
+  };
+
+  const firstRowNumber = () => {
+    return pageSize * (pageIndex + 1) + 1 - pageSize;
+  };
+
+  const lastRowNumber = () => {
+    return pageIndex + 1 === pageCount
+      ? pageSize * (pageIndex + 1) - pageSize + (employees.length % pageSize)
+      : pageSize * (pageIndex + 1);
   };
 
   return (
@@ -125,6 +137,9 @@ export const EmployeesTable = () => {
               </TableBody>
             </Table>
           </TableContainer>
+          <p>
+            {firstRowNumber()} - {lastRowNumber()} of {employees.length} entries
+          </p>
           <Pagination
             count={
               employees.length / pageSize > 1
