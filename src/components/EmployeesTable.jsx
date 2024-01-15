@@ -13,7 +13,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  TablePagination,
+  Typography,
 } from '@mui/material';
 import { useMemo } from 'react';
 import {
@@ -137,21 +137,23 @@ export const EmployeesTable = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          <p>
-            {firstRowNumber()} - {lastRowNumber()} of {employees.length} entries
-          </p>
-          <Pagination
-            count={
-              employees.length / pageSize > 1
-                ? Math.ceil(employees.length / pageSize)
-                : 1
-            }
-            page={pageIndex + 1}
-            onChange={handleChange}
-            variant="outlined"
-            shape="rounded"
-            sx={{ mt: 2 }}
-          />
+          <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
+            <Typography variant="overline">
+              {firstRowNumber()} - {lastRowNumber()} of {employees.length}{' '}
+              entries
+            </Typography>
+            <Pagination
+              count={
+                employees.length / pageSize > 1
+                  ? Math.ceil(employees.length / pageSize)
+                  : 1
+              }
+              page={pageIndex + 1}
+              onChange={handleChange}
+              variant="outlined"
+              shape="rounded"
+            />
+          </Box>
         </Box>
       </Box>
     </>
