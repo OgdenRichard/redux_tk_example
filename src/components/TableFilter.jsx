@@ -10,6 +10,7 @@ export const TableFilter = ({ filter, setFilter }) => {
         size="small"
         onChange={(e) => setFilter(e.target.value)}
         sx={{ mb: 2, width: '20%', ml: 'auto' }}
+        style={{ minWidth: 100 }}
       />
     </>
   );

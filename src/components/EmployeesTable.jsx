@@ -14,6 +14,7 @@ import {
   FormControl,
   InputLabel,
   Typography,
+  Stack,
 } from '@mui/material';
 import { useMemo } from 'react';
 import {
@@ -35,6 +36,7 @@ export const EmployeesTable = () => {
     getTableBodyProps,
     headerGroups,
     page,
+    rows,
     gotoPage,
     prepareRow,
     setPageSize,
@@ -63,7 +65,7 @@ export const EmployeesTable = () => {
 
   const lastRowNumber = () => {
     return pageIndex + 1 === pageCount
-      ? pageSize * (pageIndex + 1) - pageSize + (employees.length % pageSize)
+      ? pageSize * (pageIndex + 1) - pageSize + (rows.length % pageSize)
       : pageSize * (pageIndex + 1);
   };
 
@@ -137,15 +139,20 @@ export const EmployeesTable = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          <Box display="flex" justifyContent="space-between" sx={{ mt: 2 }}>
+          <Stack
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ mt: 2 }}
+            direction={{ xs: 'column', sm: 'row' }}
+          >
             <Typography variant="overline">
-              {firstRowNumber()} - {lastRowNumber()} of {employees.length}{' '}
-              entries
+              {firstRowNumber()} - {lastRowNumber()} of {rows.length} entries
             </Typography>
             <Pagination
               count={
-                employees.length / pageSize > 1
-                  ? Math.ceil(employees.length / pageSize)
+                rows.length / pageSize > 1
+                  ? Math.ceil(rows.length / pageSize)
                   : 1
               }
               page={pageIndex + 1}
@@ -153,7 +160,7 @@ export const EmployeesTable = () => {
               variant="outlined"
               shape="rounded"
             />
-          </Box>
+          </Stack>
         </Box>
       </Box>
     </>

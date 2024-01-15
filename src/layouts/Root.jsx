@@ -6,7 +6,7 @@ export const Root = () => {
   return (
     <>
       <Header />
-      <Container maxWidth="xl" sx={{ mt: 20 }}>
+      <Container maxWidth="xl" sx={{ mt: 25 }}>
         <Outlet />
       </Container>
     </>
