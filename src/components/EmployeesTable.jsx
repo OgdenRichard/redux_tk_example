@@ -9,6 +9,10 @@ import {
   TableSortLabel,
   Box,
   Pagination,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
 } from '@mui/material';
 import { useMemo } from 'react';
 import {
@@ -18,8 +22,8 @@ import {
   usePagination,
 } from 'react-table';
 import { useSelector } from 'react-redux';
-import COLUMNS from '../data/employeesColumns';
 import { TableFilter } from './TableFilter';
+import COLUMNS from '../data/employeesColumns';
 
 export const EmployeesTable = () => {
   const employees = useSelector((state) => state.employees.data);
@@ -54,7 +58,27 @@ export const EmployeesTable = () => {
   return (
     <>
       <Box display="flex" flexDirection="column">
-        <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
+        <Box display="flex" justifyContent="space-between">
+          <Box display="flex">
+            <FormControl size="small">
+              <InputLabel id="demo-simple-select-helper-label">Rows</InputLabel>
+              <Select
+                labelId="demo-simple-select-helper-label"
+                id="demo-simple-select-helper"
+                value={pageSize}
+                label="Rows"
+                onChange={(e) => setPageSize(Number(e.target.value))}
+              >
+                {[5, 10, 20].map((size) => (
+                  <MenuItem key={size} value={size}>
+                    {size}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Box>
+          <TableFilter filter={globalFilter} setFilter={setGlobalFilter} />
+        </Box>
         <Box sx={{ width: '100%', display: 'table', tableLayout: 'fixed' }}>
           <TableContainer component={Paper}>
             <Table {...getTableProps()} sx={{ border: 0 }}>
@@ -113,16 +137,6 @@ export const EmployeesTable = () => {
             shape="rounded"
             sx={{ mt: 2 }}
           />
-          <select
-            value={pageSize}
-            onChange={(e) => setPageSize(Number(e.target.value))}
-          >
-            {[5, 10, 20].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
         </Box>
       </Box>
     </>

@@ -50,3 +50,7 @@ table {
 .sort {
   margin-left: 16px;
 }
+
+.bbox {
+  border: 1px solid white;
+}
