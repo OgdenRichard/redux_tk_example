@@ -11,7 +11,12 @@ import {
   Pagination,
 } from '@mui/material';
 import { useMemo } from 'react';
-import { useTable, useSortBy, useGlobalFilter } from 'react-table';
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from 'react-table';
 import { useSelector } from 'react-redux';
 import COLUMNS from '../data/employeesColumns';
 import { TableFilter } from './TableFilter';
@@ -24,7 +29,9 @@ export const EmployeesTable = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    page,
     rows,
+    gotoPage,
     prepareRow,
     state,
     setGlobalFilter,
@@ -35,9 +42,15 @@ export const EmployeesTable = () => {
     },
     useGlobalFilter,
     useSortBy,
+    usePagination,
   );
 
-  const { globalFilter } = state;
+  const { globalFilter, pageIndex } = state;
+
+  const handleChange = (event, value) => {
+    // console.log(value);
+    gotoPage(value - 1);
+  };
 
   return (
     <>
@@ -68,7 +81,7 @@ export const EmployeesTable = () => {
                 ))}
               </TableHead>
               <TableBody {...getTableBodyProps()}>
-                {rows.map((row) => {
+                {page.map((row) => {
                   prepareRow(row);
                   return (
                     <TableRow
@@ -90,7 +103,11 @@ export const EmployeesTable = () => {
             </Table>
           </TableContainer>
           <Pagination
-            count={10}
+            count={
+              employees.length / 10 > 1 ? Math.ceil(employees.length / 10) : 1
+            }
+            page={pageIndex + 1}
+            onChange={handleChange}
             variant="outlined"
             shape="rounded"
             sx={{ mt: 2 }}
