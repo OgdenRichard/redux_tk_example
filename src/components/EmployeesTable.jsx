@@ -64,7 +64,10 @@ export const EmployeesTable = () => {
   };
 
   const lastRowNumber = () => {
-    return pageIndex + 1 === pageCount
+    if (pageSize > rows.length) {
+      return rows.length;
+    }
+    return pageIndex + 1 === pageCount && pageIndex
       ? pageSize * (pageIndex + 1) - pageSize + (rows.length % pageSize)
       : pageSize * (pageIndex + 1);
   };
@@ -75,10 +78,10 @@ export const EmployeesTable = () => {
         <Box display="flex" justifyContent="space-between">
           <Box display="flex">
             <FormControl size="small">
-              <InputLabel id="demo-simple-select-helper-label">Rows</InputLabel>
+              <InputLabel id="rows_ppage_label">Rows</InputLabel>
               <Select
-                labelId="demo-simple-select-helper-label"
-                id="demo-simple-select-helper"
+                labelId="rows_ppage_label"
+                id="rows_ppage_select"
                 value={pageSize}
                 label="Rows"
                 onChange={(e) => setPageSize(Number(e.target.value))}
