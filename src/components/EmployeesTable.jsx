@@ -30,9 +30,9 @@ export const EmployeesTable = () => {
     getTableBodyProps,
     headerGroups,
     page,
-    rows,
     gotoPage,
     prepareRow,
+    setPageSize,
     state,
     setGlobalFilter,
   } = useTable(
@@ -45,10 +45,9 @@ export const EmployeesTable = () => {
     usePagination,
   );
 
-  const { globalFilter, pageIndex } = state;
+  const { globalFilter, pageIndex, pageSize } = state;
 
   const handleChange = (event, value) => {
-    // console.log(value);
     gotoPage(value - 1);
   };
 
@@ -104,7 +103,9 @@ export const EmployeesTable = () => {
           </TableContainer>
           <Pagination
             count={
-              employees.length / 10 > 1 ? Math.ceil(employees.length / 10) : 1
+              employees.length / pageSize > 1
+                ? Math.ceil(employees.length / pageSize)
+                : 1
             }
             page={pageIndex + 1}
             onChange={handleChange}
@@ -112,6 +113,16 @@ export const EmployeesTable = () => {
             shape="rounded"
             sx={{ mt: 2 }}
           />
+          <select
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
+            {[5, 10, 20].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
         </Box>
       </Box>
     </>
