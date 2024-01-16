@@ -45,11 +45,10 @@ table {
 .header__logo {
   margin-left: 0;
   margin-right: 0;
-  width: 7em;
 }
 
 .header__logo > img {
-  width: inherit;
+  width: 8em;
   margin-bottom: 0.5em;
 }
 

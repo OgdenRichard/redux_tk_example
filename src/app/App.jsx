@@ -18,7 +18,7 @@ import 'dayjs/locale/fr';
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
   },
 });
 

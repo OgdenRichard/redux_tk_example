@@ -22,8 +22,10 @@ export const Header = () => {
             sx={{ mx: 2 }}
           >
             <Box>
-              <figure className="header__logo">
-                <img src={logo} alt="Wealth Health logo" />
+              <figure>
+                <NavLink to="/home" className="header__logo">
+                  <img src={logo} alt="Wealth Health logo" />
+                </NavLink>
                 <figcaption>Wealth Health</figcaption>
               </figure>
             </Box>
