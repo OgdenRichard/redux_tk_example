@@ -1,4 +1,4 @@
-import { AppBar, Box, Stack } from '@mui/material';
+import { AppBar, Box, Stack, Divider } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
@@ -13,36 +13,41 @@ export const Header = () => {
   return (
     <>
       <AppBar position="fixed" color="default">
-        <Stack
-          display="flex"
-          direction={{ xs: 'column', sm: 'row' }}
-          alignItems={{ xs: 'center', sm: 'flex-end' }}
-          justifyContent="space-between"
-          sx={{ mx: 2 }}
-        >
-          <figure className="header__logo">
-            <img src={logo} alt="Wealth Health logo" />
-            <figcaption>Wealth Health</figcaption>
-          </figure>
+        <Box mx="auto" sx={{ width: '75%' }}>
           <Stack
             display="flex"
-            direction="row"
-            alignItems="flex-start"
-            gap={2}
-            sx={{ mb: 2 }}
+            direction={{ xs: 'column', sm: 'row' }}
+            alignItems={{ xs: 'center', sm: 'flex-end' }}
+            justifyContent="space-between"
+            sx={{ mx: 2 }}
           >
             <Box>
-              <NavLink to="/home" style={navLinkStyle}>
-                Home
-              </NavLink>
+              <figure className="header__logo">
+                <img src={logo} alt="Wealth Health logo" />
+                <figcaption>Wealth Health</figcaption>
+              </figure>
             </Box>
-            <Box>
-              <NavLink to="/employees" style={navLinkStyle}>
-                Employees
-              </NavLink>
-            </Box>
+            <Stack
+              display="flex"
+              direction="row"
+              alignItems="flex-start"
+              gap={2}
+              sx={{ mb: 2 }}
+            >
+              <Box>
+                <NavLink to="/home" style={navLinkStyle}>
+                  Home
+                </NavLink>
+              </Box>
+              <Divider orientation="vertical" flexItem />
+              <Box>
+                <NavLink to="/employees" style={navLinkStyle}>
+                  Employees
+                </NavLink>
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
+        </Box>
       </AppBar>
     </>
   );
