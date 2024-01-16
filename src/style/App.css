@@ -42,8 +42,14 @@ table {
   margin: 10px;
 }
 
+.header__logo {
+  margin-left: 0;
+  margin-right: 0;
+  width: 7em;
+}
+
 .header__logo > img {
-  width: 9em;
+  width: inherit;
   margin-bottom: 0.5em;
 }
 
