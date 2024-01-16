@@ -74,7 +74,7 @@ export const EmployeesTable = () => {
 
   return (
     <>
-      <Box display="flex" flexDirection="column">
+      <Box display="flex" flexDirection="column" sx={{ mb: 10 }}>
         <Box display="flex" justifyContent="space-between">
           <Box display="flex">
             <FormControl size="small">

@@ -1,9 +1,10 @@
+import { PageTitle } from '../components/PageTitle';
 import { FormView } from '../features/form/FormView';
 
 export const Home = () => {
   return (
     <>
-      <h2>HRnet</h2>
+      <PageTitle title="HRnet" variant="h3" my={5} />
       <FormView />
     </>
   );

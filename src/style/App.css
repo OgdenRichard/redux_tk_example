@@ -33,6 +33,10 @@ table {
   border-collapse: collapse;
 }
 
+figure {
+  margin: 10px;
+}
+
 .table_container {
   overflow-x: auto;
   margin-right: auto;
