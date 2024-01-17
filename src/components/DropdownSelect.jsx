@@ -1,13 +1,17 @@
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 
-export const DropdownSelect = ({ data, datakey, label, reducer, keyAsVal }) => {
-  const [currentValue, setCurrentValue] = useState('');
+export const DropdownSelect = ({
+  data,
+  datakey,
+  label,
+  reducer,
+  storeVal,
+  keyAsVal,
+}) => {
   const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch(reducer(event.target.value));
-    setCurrentValue(event.target.value);
   };
   const labelDisplay = label.charAt(0).toUpperCase() + label.slice(1);
   return (
@@ -17,7 +21,7 @@ export const DropdownSelect = ({ data, datakey, label, reducer, keyAsVal }) => {
         <Select
           labelId={`${label}-select-label`}
           id="demo-simple-select"
-          value={currentValue}
+          value={storeVal}
           label={labelDisplay}
           onChange={handleChange}
         >

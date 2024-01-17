@@ -27,8 +27,16 @@ import {
 export const FormView = () => {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.employees.formdata.firstname);
+  const lastname = useSelector((state) => state.employees.formdata.lastname);
+  const city = useSelector((state) => state.employees.formdata.city);
+  const street = useSelector((state) => state.employees.formdata.street);
+  const usState = useSelector((state) => state.employees.formdata.state);
+  const department = useSelector(
+    (state) => state.employees.formdata.department,
+  );
   const birthdate = useSelector((state) => state.employees.formdata.birthdate);
   const startdate = useSelector((state) => state.employees.formdata.startdate);
+  const zipcode = useSelector((state) => state.employees.formdata.zipcode);
   return (
     <>
       <Box sx={{ mb: 5 }}>
@@ -53,6 +61,7 @@ export const FormView = () => {
               variant="outlined"
               label="Last Name"
               color="secondary"
+              value={lastname || ''}
               fullWidth
               onChange={(e) => dispatch(setLastName(e.target.value))}
             />
@@ -65,7 +74,7 @@ export const FormView = () => {
             <DatePicker
               label="Date of Birth"
               slotProps={{ textField: { fullWidth: true, readOnly: true } }}
-              // value={birthdate || null}
+              value={birthdate || null}
               onAccept={(val) =>
                 dispatch(setBirthDate(val ? val.toISOString(true) : null))
               }
@@ -73,7 +82,7 @@ export const FormView = () => {
             <DatePicker
               label="Start Date"
               slotProps={{ textField: { fullWidth: true, readOnly: true } }}
-              // value={startdate || null}
+              value={startdate || null}
               onAccept={(val) =>
                 dispatch(setStartDate(val ? val.toISOString(true) : null))
               }
@@ -99,6 +108,7 @@ export const FormView = () => {
                 label="Street"
                 color="secondary"
                 fullWidth
+                value={street || ''}
                 onChange={(e) => dispatch(setStreet(e.target.value))}
               />
               <TextField
@@ -106,6 +116,7 @@ export const FormView = () => {
                 label="City"
                 color="secondary"
                 fullWidth
+                value={city || ''}
                 onChange={(e) => dispatch(setCity(e.target.value))}
               />
             </Stack>
@@ -120,6 +131,7 @@ export const FormView = () => {
                 label="state"
                 reducer={setState}
                 keyAsVal
+                storeVal={usState || ''}
               />
               <TextField
                 variant="outlined"
@@ -127,6 +139,7 @@ export const FormView = () => {
                 label="Zip Code"
                 color="secondary"
                 fullWidth
+                value={zipcode || ''}
                 onChange={(e) => dispatch(setZipCode(e.target.value))}
               />
             </Stack>
@@ -136,6 +149,7 @@ export const FormView = () => {
             datakey="key"
             label="department"
             reducer={setDepartment}
+            storeVal={department || ''}
           />
           <Button
             variant="contained"
