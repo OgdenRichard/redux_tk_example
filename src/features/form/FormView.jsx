@@ -50,18 +50,22 @@ export const FormView = () => {
             sx={{ mb: 2 }}
           >
             <TextField
+              required
+              error={firstname.error}
               variant="outlined"
               label="First Name"
               color="secondary"
-              value={firstname || ''}
+              value={firstname.val}
               fullWidth
               onChange={(e) => dispatch(setFirstName(e.target.value))}
             />
             <TextField
+              required
+              error={lastname.error}
               variant="outlined"
               label="Last Name"
               color="secondary"
-              value={lastname || ''}
+              value={lastname.val}
               fullWidth
               onChange={(e) => dispatch(setLastName(e.target.value))}
             />
@@ -73,7 +77,7 @@ export const FormView = () => {
           >
             <DatePicker
               label="Date of Birth"
-              slotProps={{ textField: { fullWidth: true, readOnly: true } }}
+              slotProps={{ textField: { fullWidth: true } }}
               value={birthdate || null}
               onAccept={(val) =>
                 dispatch(setBirthDate(val ? val.toISOString(true) : null))
@@ -81,8 +85,8 @@ export const FormView = () => {
             />
             <DatePicker
               label="Start Date"
-              slotProps={{ textField: { fullWidth: true, readOnly: true } }}
-              value={startdate || null}
+              slotProps={{ textField: { fullWidth: true } }}
+              value={startdate}
               onAccept={(val) =>
                 dispatch(setStartDate(val ? val.toISOString(true) : null))
               }
@@ -149,7 +153,9 @@ export const FormView = () => {
             datakey="key"
             label="department"
             reducer={setDepartment}
-            storeVal={department || ''}
+            storeVal={department.val}
+            error={department.error}
+            required
           />
           <Button
             variant="contained"

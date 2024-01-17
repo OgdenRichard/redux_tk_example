@@ -8,6 +8,8 @@ export const DropdownSelect = ({
   reducer,
   storeVal,
   keyAsVal,
+  required,
+  error,
 }) => {
   const dispatch = useDispatch();
   const handleChange = (event) => {
@@ -16,11 +18,11 @@ export const DropdownSelect = ({
   const labelDisplay = label.charAt(0).toUpperCase() + label.slice(1);
   return (
     <>
-      <FormControl fullWidth>
+      <FormControl fullWidth required={required} error={error}>
         <InputLabel id={`${label}-select-label`}>{labelDisplay}</InputLabel>
         <Select
           labelId={`${label}-select-label`}
-          id="demo-simple-select"
+          id={`${label}-select`}
           value={storeVal}
           label={labelDisplay}
           onChange={handleChange}

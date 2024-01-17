@@ -2,7 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   rowId: 0,
-  formdata: {},
+  formdata: {
+    firstname: { val: '', error: false },
+    lastname: { val: '', error: false },
+    department: { val: '', error: false },
+  },
   data: [],
 };
 
@@ -11,10 +15,14 @@ const formSlice = createSlice({
   initialState,
   reducers: {
     setFirstName: (state, action) => {
-      state.formdata.firstname = action.payload;
+      state.formdata.firstname.val = action.payload;
+      state.formdata.firstname.error =
+        state.formdata.firstname.val.trim().length === 0;
     },
     setLastName: (state, action) => {
-      state.formdata.lastname = action.payload;
+      state.formdata.lastname.val = action.payload;
+      state.formdata.lastname.error =
+        state.formdata.lastname.val.trim().length === 0;
     },
     setBirthDate: (state, action) => {
       state.formdata.birthdate = action.payload;
@@ -35,13 +43,30 @@ const formSlice = createSlice({
       state.formdata.zipcode = action.payload;
     },
     setDepartment: (state, action) => {
-      state.formdata.department = action.payload;
+      state.formdata.department.val = action.payload;
     },
     submitForm: (state) => {
-      state.rowId += 1;
-      state.formdata.id = state.rowId;
-      state.data.push(state.formdata);
-      state.formdata = {};
+      if (
+        state.formdata.firstname.val.trim().length &&
+        state.formdata.lastname.val.trim().length &&
+        state.formdata.department.val.length
+      ) {
+        state.rowId += 1;
+        state.formdata.id = state.rowId;
+        state.data.push(state.formdata);
+        state.formdata = {
+          firstname: { val: '', error: false },
+          lastname: { val: '', error: false },
+          department: { val: '', error: false },
+        };
+      } else {
+        if (!state.formdata.firstname.val.trim().length)
+          state.formdata.firstname.error = true;
+        if (!state.formdata.lastname.val.trim().length)
+          state.formdata.lastname.error = true;
+        if (!state.formdata.department.val.length)
+          state.formdata.department.error = true;
+      }
     },
   },
 });

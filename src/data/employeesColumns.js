@@ -3,11 +3,11 @@ import { format } from 'date-fns';
 const COLUMNS = [
   {
     Header: 'First Name',
-    accessor: 'firstname',
+    accessor: 'firstname.val',
   },
   {
     Header: 'Last Name',
-    accessor: 'lastname',
+    accessor: 'lastname.val',
   },
   {
     Header: 'Start Date',
@@ -18,7 +18,7 @@ const COLUMNS = [
   },
   {
     Header: 'Department',
-    accessor: 'department',
+    accessor: 'department.val',
   },
   {
     Header: 'Date of birth',
