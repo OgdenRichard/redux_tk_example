@@ -6,6 +6,12 @@ const initialState = {
     firstname: { val: '', error: false },
     lastname: { val: '', error: false },
     department: { val: '', error: false },
+    birthdate: null,
+    startdate: null,
+    street: '',
+    city: '',
+    state: '',
+    zipcode: '',
   },
   data: [],
 };
@@ -44,6 +50,7 @@ const formSlice = createSlice({
     },
     setDepartment: (state, action) => {
       state.formdata.department.val = action.payload;
+      state.formdata.department.error = state.formdata.department.val === '';
     },
     submitForm: (state) => {
       if (
@@ -58,6 +65,12 @@ const formSlice = createSlice({
           firstname: { val: '', error: false },
           lastname: { val: '', error: false },
           department: { val: '', error: false },
+          birthdate: null,
+          startdate: null,
+          street: '',
+          city: '',
+          state: '',
+          zipcode: '',
         };
       } else {
         if (!state.formdata.firstname.val.trim().length)

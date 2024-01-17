@@ -1,4 +1,10 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  FormHelperText,
+} from '@mui/material';
 import { useDispatch } from 'react-redux';
 
 export const DropdownSelect = ({
@@ -37,6 +43,7 @@ export const DropdownSelect = ({
               </MenuItem>
             ))}
         </Select>
+        {error && <FormHelperText>Required</FormHelperText>}
       </FormControl>
     </>
   );
