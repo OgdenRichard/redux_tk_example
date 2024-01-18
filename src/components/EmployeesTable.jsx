@@ -60,7 +60,7 @@ export const EmployeesTable = () => {
   };
 
   const firstRowNumber = () => {
-    return pageSize * (pageIndex + 1) + 1 - pageSize;
+    return rows.length ? pageSize * (pageIndex + 1) + 1 - pageSize : 0;
   };
 
   const lastRowNumber = () => {
