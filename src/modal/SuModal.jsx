@@ -5,24 +5,19 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
   const show = isOpen ? 'sumodal__visible' : '';
   const handleEscKeyUp = useCallback(
     (event) => {
-      event.stopImmediatePropagation();
-      if (event.key === 'Escape') {
+      if (isOpen && event.key === 'Escape') {
         setIsOpen(false);
       }
     },
-    [setIsOpen],
+    [setIsOpen, isOpen],
   );
 
   useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', handleEscKeyUp);
-    } else {
-      window.removeEventListener('keydown', handleEscKeyUp);
-    }
+    window.addEventListener('keydown', handleEscKeyUp);
     return () => {
       window.removeEventListener('keydown', handleEscKeyUp);
     };
-  }, [handleEscKeyUp, isOpen]);
+  }, [handleEscKeyUp]);
 
   return (
     <>
@@ -34,8 +29,13 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
           className="sumodal__container"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sumodal__modal" style={{ width: `${width}vw` }}>
-            <div className="sumodal__modal__content">{children}</div>
+          <div className="sumodal__modal">
+            <div
+              className="sumodal__modal__content"
+              style={{ width: `${width}vw`, height: '25vh' }}
+            >
+              {children}
+            </div>
             <button
               type="button"
               className="sumodal__btn"

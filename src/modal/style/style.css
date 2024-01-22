@@ -23,11 +23,8 @@
 }
 
 .sumodal__modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75vw;
-  height: 50vh;
+  width: auto;
+  height: auto;
   border: 5px solid;
   border-radius: 5px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
@@ -35,6 +32,10 @@
 }
 
 .sumodal__modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: black;
 }
 
@@ -47,7 +48,6 @@
   font-size: 18px;
   color: white;
   background: black;
-  transition: all 0.25s ease;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
   position: absolute;
   right: 0;
