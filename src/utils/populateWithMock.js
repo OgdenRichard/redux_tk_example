@@ -1,7 +1,6 @@
 import mockdata from '../data/mockdata.json';
 
 export const mockTableData = () => {
-  // const initialMock = JSON.parse(mockdata);
   const formattedMock = [];
   mockdata.forEach((employee) => {
     formattedMock.push({
