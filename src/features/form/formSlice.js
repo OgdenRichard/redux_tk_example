@@ -53,8 +53,8 @@ const formSlice = createSlice({
       state.formdata.department.val = action.payload;
       state.formdata.department.error = state.formdata.department.val === '';
     },
-    closeModal: (state) => {
-      state.showModal = false;
+    closeModal: (state, action) => {
+      state.showModal = action.payload;
     },
     submitForm: (state) => {
       if (
