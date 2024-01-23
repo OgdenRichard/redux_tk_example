@@ -2,7 +2,6 @@ import { useEffect, useCallback } from 'react';
 import './style/style.css';
 
 export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
-  const show = isOpen ? 'sumodal__visible' : '';
   const handleEscKeyUp = useCallback(
     (event) => {
       if (isOpen && event.key === 'Escape') {
@@ -21,10 +20,7 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
 
   return (
     <>
-      <div
-        className={`sumodal__background ${show}`}
-        onClick={() => setIsOpen(false)}
-      >
+      <div className="sumodal__background" onClick={() => setIsOpen(false)}>
         <div
           className="sumodal__container"
           onClick={(e) => e.stopPropagation()}

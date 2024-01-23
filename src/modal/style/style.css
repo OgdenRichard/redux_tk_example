@@ -1,5 +1,5 @@
 .sumodal__background {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(117, 117, 117, 0.8);
   width: 100vw;
   height: 100vh;
   z-index: 10000;
@@ -7,11 +7,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  display: none;
-}
-
-.sumodal__visible {
-  display: block;
 }
 
 .sumodal__container {
@@ -19,13 +14,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 1s;
   z-index: 10001;
 }
 
 .sumodal__modal {
   width: auto;
   height: auto;
-  border: 5px solid;
+  border: 5px solid black;
   border-radius: 5px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
   background: white;

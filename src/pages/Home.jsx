@@ -9,9 +9,11 @@ export const Home = () => {
     <>
       <PageTitle title="HRnet" variant="h3" my={5} />
       <FormView showModal={showModal} setShowModal={setShowModal} />
-      <SuModal width={50} isOpen={showModal} setIsOpen={setShowModal}>
-        Hé salut
-      </SuModal>
+      {showModal && (
+        <SuModal width={50} isOpen={showModal} setIsOpen={setShowModal}>
+          Hé salut
+        </SuModal>
+      )}
     </>
   );
 };
