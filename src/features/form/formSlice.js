@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   rowId: 0,
+  showModal: false,
   formdata: {
     firstname: { val: '', error: false },
     lastname: { val: '', error: false },
@@ -52,6 +53,9 @@ const formSlice = createSlice({
       state.formdata.department.val = action.payload;
       state.formdata.department.error = state.formdata.department.val === '';
     },
+    closeModal: (state) => {
+      state.showModal = false;
+    },
     submitForm: (state) => {
       if (
         state.formdata.firstname.val.trim().length &&
@@ -59,6 +63,7 @@ const formSlice = createSlice({
         state.formdata.department.val.length
       ) {
         state.rowId += 1;
+        state.showModal = true;
         state.formdata.id = state.rowId;
         state.data.push(state.formdata);
         state.formdata = {
@@ -95,5 +100,6 @@ export const {
   setState,
   setZipCode,
   setDepartment,
+  closeModal,
   submitForm,
 } = formSlice.actions;

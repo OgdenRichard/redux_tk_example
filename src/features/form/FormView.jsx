@@ -24,7 +24,7 @@ import {
   submitForm,
 } from './formSlice';
 
-export const FormView = ({ showModal, setShowModal }) => {
+export const FormView = () => {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.employees.formdata.firstname);
   const lastname = useSelector((state) => state.employees.formdata.lastname);
@@ -38,10 +38,6 @@ export const FormView = ({ showModal, setShowModal }) => {
   const startdate = useSelector((state) => state.employees.formdata.startdate);
   const zipcode = useSelector((state) => state.employees.formdata.zipcode);
 
-  const handleSubmit = () => {
-    dispatch(submitForm());
-    setShowModal(true);
-  };
   return (
     <>
       <Box sx={{ mb: 5 }}>
@@ -168,7 +164,7 @@ export const FormView = ({ showModal, setShowModal }) => {
           color="primary"
           fullWidth
           sx={{ mt: 2 }}
-          onClick={() => handleSubmit()}
+          onClick={() => dispatch(submitForm())}
         >
           Save
         </Button>

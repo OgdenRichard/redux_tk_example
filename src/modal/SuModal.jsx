@@ -5,7 +5,7 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
   const handleEscKeyUp = useCallback(
     (event) => {
       if (isOpen && event.key === 'Escape') {
-        setIsOpen(false);
+        setIsOpen();
       }
     },
     [setIsOpen, isOpen],
@@ -20,7 +20,7 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
 
   return (
     <>
-      <div className="sumodal__background" onClick={() => setIsOpen(false)}>
+      <div className="sumodal__background" onClick={() => setIsOpen()}>
         <div
           className="sumodal__container"
           onClick={(e) => e.stopPropagation()}
@@ -35,7 +35,7 @@ export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
             <button
               type="button"
               className="sumodal__btn"
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen()}
             >
               X
             </button>
