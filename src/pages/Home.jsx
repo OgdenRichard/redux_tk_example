@@ -17,16 +17,8 @@ export const Home = () => {
       <PageTitle title="HRnet" variant="h3" my={5} />
       <FormView />
       {showModal && (
-        <SuModal
-          width={50}
-          isOpen={showModal}
-          setIsOpen={toggleModal}
-          closeButton
-          closeOnClickOut
-          closeOnEscKey
-          /* options={{ background: 'red' }} */
-        >
-          Hé salut
+        <SuModal width={50} isOpen={showModal} setIsOpen={toggleModal}>
+          Employee Created!
         </SuModal>
       )}
     </>
