@@ -1,10 +1,17 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .sumodal__background {
   background-color: rgba(117, 117, 117, 0.8);
-  width: 100vw;
-  height: 100vh;
+  width: 101vw;
+  height: 101vh;
   z-index: 10000;
   top: 50%;
   left: 50%;
+  box-sizing: border-box;
   transform: translate(-50%, -50%);
   position: fixed;
 }

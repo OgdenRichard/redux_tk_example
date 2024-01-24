@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import './style/style.css';
 
-export const SuModal = ({ children, width, isOpen, setIsOpen }) => {
+export const SuModal = ({ children, isOpen, setIsOpen, width }) => {
   const handleEscKeyUp = useCallback(
     (event) => {
       if (isOpen && event.key === 'Escape') {
