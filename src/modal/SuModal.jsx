@@ -1,15 +1,19 @@
 import { useEffect, useCallback } from 'react';
+import { useMountTransition } from './useMountTransition';
 import './style/style.css';
 
 export const SuModal = ({
   children,
   isOpen,
   setIsOpen,
+  modal_transition = true,
   closeButton = true,
   closeOnClickOut = true,
   closeOnEscKey = true,
   styleOptions,
 }) => {
+  const hasTransitionedIn = useMountTransition(isOpen, 1000);
+
   const handleEscKeyUp = useCallback(
     (event) => {
       if (isOpen && event.key === 'Escape') {
@@ -43,7 +47,11 @@ export const SuModal = ({
         }}
       >
         <div
-          className="sumodal__container"
+          className={`${
+            (modal_transition && 'sumodal__initpos') || 'sumodal__container'
+          } ${
+            (modal_transition && hasTransitionedIn && 'sumodal__finalpos') || ''
+          }`}
           onClick={(e) => e.stopPropagation()}
         >
           <div
