@@ -1,7 +1,15 @@
 import { useEffect, useCallback } from 'react';
 import './style/style.css';
 
-export const SuModal = ({ children, isOpen, setIsOpen, width }) => {
+export const SuModal = ({
+  children,
+  isOpen,
+  setIsOpen,
+  closeButton,
+  closeOnClickOut,
+  closeOnEscKey,
+  options,
+}) => {
   const handleEscKeyUp = useCallback(
     (event) => {
       if (isOpen && event.key === 'Escape') {
@@ -12,33 +20,51 @@ export const SuModal = ({ children, isOpen, setIsOpen, width }) => {
   );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleEscKeyUp);
+    if (closeOnEscKey) {
+      window.addEventListener('keydown', handleEscKeyUp);
+    }
     return () => {
-      window.removeEventListener('keydown', handleEscKeyUp);
+      if (closeOnEscKey) {
+        window.removeEventListener('keydown', handleEscKeyUp);
+      }
     };
-  }, [handleEscKeyUp]);
+  }, [closeOnEscKey, handleEscKeyUp]);
 
   return (
     <>
-      <div className="sumodal__background" onClick={() => setIsOpen(false)}>
+      <div
+        className="sumodal__background"
+        onClick={closeOnClickOut ? () => setIsOpen(false) : undefined}
+      >
         <div
           className="sumodal__container"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sumodal__modal">
+          <div
+            className="sumodal__modal"
+            style={{
+              background:
+                options && options.background ? options.background : 'white',
+            }}
+          >
             <div
               className="sumodal__modal__content"
-              style={{ width: `${width}vw`, height: '25vh' }}
+              style={{
+                width: options && options.width ? options.width : 'auto',
+                height: options && options.height ? options.height : 'auto',
+              }}
             >
               {children}
             </div>
-            <button
-              type="button"
-              className="sumodal__btn"
-              onClick={() => setIsOpen(false)}
-            >
-              X
-            </button>
+            {closeButton && (
+              <button
+                type="button"
+                className="sumodal__btn"
+                onClick={() => setIsOpen(false)}
+              >
+                X
+              </button>
+            )}
           </div>
         </div>
       </div>
