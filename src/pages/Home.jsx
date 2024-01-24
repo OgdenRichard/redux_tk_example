@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Box, Button, Typography } from '@mui/material';
 import { PageTitle } from '../components/PageTitle';
 import { FormView } from '../features/form/FormView';
 import { closeModal } from '../features/form/formSlice';
@@ -18,7 +19,10 @@ export const Home = () => {
       <FormView />
       {showModal && (
         <SuModal width={50} isOpen={showModal} setIsOpen={toggleModal}>
-          Employee Created!
+          <Box sx={{ m: 10 }}>
+            <Typography>Employee created !</Typography>
+            <Button>Booh</Button>
+          </Box>
         </SuModal>
       )}
     </>
