@@ -1,18 +1,18 @@
 import { useEffect, useCallback } from 'react';
-import { useMountTransition } from './useMountTransition';
+import { useSuModalTransition } from './useSuModalTransition';
 import './style/style.css';
 
 export const SuModal = ({
   children,
   isOpen,
   setIsOpen,
-  modal_transition = true,
+  suModal_transition = true,
   closeButton = true,
   closeOnClickOut = true,
   closeOnEscKey = true,
   styleOptions,
 }) => {
-  const hasTransitionedIn = useMountTransition(isOpen, 1000);
+  const setTransition = useSuModalTransition(isOpen);
 
   const handleEscKeyUp = useCallback(
     (event) => {
@@ -48,9 +48,9 @@ export const SuModal = ({
       >
         <div
           className={`${
-            (modal_transition && 'sumodal__initpos') || 'sumodal__container'
+            (suModal_transition && 'sumodal__initpos') || 'sumodal__container'
           } ${
-            (modal_transition && hasTransitionedIn && 'sumodal__finalpos') || ''
+            (suModal_transition && setTransition && 'sumodal__finalpos') || ''
           }`}
           onClick={(e) => e.stopPropagation()}
         >
