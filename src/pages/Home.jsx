@@ -18,7 +18,11 @@ export const Home = () => {
       <PageTitle title="HRnet" variant="h3" my={5} />
       <FormView />
       {showModal && (
-        <SuModal isOpen={showModal} setIsOpen={toggleModal}>
+        <SuModal
+          isOpen={showModal}
+          setIsOpen={toggleModal}
+          closeOnEscKey={false}
+        >
           <Box sx={{ m: 12 }}>
             <Typography>Employee created !</Typography>
             <Button>Booh</Button>

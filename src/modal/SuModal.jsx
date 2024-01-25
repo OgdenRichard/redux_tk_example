@@ -1,5 +1,5 @@
-import { useEffect, useCallback } from 'react';
 import { useSuModalTransition } from './useSuModalTransition';
+import { useCloseOnEscKey } from './useCloseOnEscKey';
 import './style/style.css';
 
 export const SuModal = ({
@@ -13,26 +13,7 @@ export const SuModal = ({
   styleOptions,
 }) => {
   const setTransition = useSuModalTransition(isOpen);
-
-  const handleEscKeyUp = useCallback(
-    (event) => {
-      if (isOpen && event.key === 'Escape') {
-        setIsOpen(false);
-      }
-    },
-    [setIsOpen, isOpen],
-  );
-
-  useEffect(() => {
-    if (closeOnEscKey) {
-      window.addEventListener('keydown', handleEscKeyUp);
-    }
-    return () => {
-      if (closeOnEscKey) {
-        window.removeEventListener('keydown', handleEscKeyUp);
-      }
-    };
-  }, [closeOnEscKey, handleEscKeyUp]);
+  useCloseOnEscKey(isOpen, setIsOpen, closeOnEscKey);
 
   return (
     <>
