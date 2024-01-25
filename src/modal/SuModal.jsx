@@ -25,6 +25,8 @@ export const SuModal = ({
             styleOptions && styleOptions.main_bg
               ? styleOptions.main_bg
               : 'rgba(117, 117, 117, 0.8)',
+          zIndex:
+            styleOptions && styleOptions.z_index ? styleOptions.z_index : '1',
         }}
       >
         <div
@@ -46,6 +48,10 @@ export const SuModal = ({
                 styleOptions && styleOptions.border
                   ? styleOptions.border
                   : '5px solid black',
+              zIndex:
+                styleOptions && styleOptions.z_index
+                  ? styleOptions.z_index
+                  : '1',
             }}
           >
             <div

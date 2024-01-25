@@ -21,7 +21,7 @@ export const Home = () => {
         <SuModal
           isOpen={showModal}
           setIsOpen={toggleModal}
-          closeOnEscKey={false}
+          styleOptions={{ z_index: 10000 }}
         >
           <Box sx={{ m: 12 }}>
             <Typography>Employee created !</Typography>

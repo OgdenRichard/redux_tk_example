@@ -5,10 +5,8 @@ body {
 }
 
 .sumodal__background {
-  background-color: rgba(117, 117, 117, 0.8);
   width: 101vw;
   height: 101vh;
-  z-index: 10000;
   top: 50%;
   left: 50%;
   box-sizing: border-box;
@@ -21,7 +19,6 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 10001;
 }
 
 .sumodal__container {
@@ -40,10 +37,8 @@ body {
 .sumodal__modal {
   width: auto;
   height: auto;
-  border: 5px solid black;
   border-radius: 5px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
-  background: white;
 }
 
 .sumodal__modal__content {
