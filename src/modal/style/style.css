@@ -37,8 +37,6 @@ body {
 .sumodal__modal {
   width: auto;
   height: auto;
-  /* box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5); */
-  /* box-shadow: none; */
 }
 
 .sumodal__modal__content {
