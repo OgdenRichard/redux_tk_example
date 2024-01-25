@@ -48,6 +48,14 @@ export const SuModal = ({
                 styleOptions && styleOptions.border
                   ? styleOptions.border
                   : '5px solid black',
+              borderRadius:
+                styleOptions && styleOptions.border_radius
+                  ? styleOptions.border_radius
+                  : '5px',
+              boxShadow:
+                styleOptions && styleOptions.box_shadow
+                  ? styleOptions.box_shadow
+                  : '0 5px 20px 0 rgba(0, 0, 0, 0.5)',
               zIndex:
                 styleOptions && styleOptions.z_index
                   ? styleOptions.z_index
