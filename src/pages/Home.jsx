@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+// import { SuModal } from 'seumodal';
 import { PageTitle } from '../components/PageTitle';
 import { FormView } from '../features/form/FormView';
 import { closeModal } from '../features/form/formSlice';
@@ -21,11 +22,14 @@ export const Home = () => {
         <SuModal
           isOpen={showModal}
           setIsOpen={toggleModal}
-          styleOptions={{ z_index: 10000 }}
+          styleOptions={{
+            background: { zIndex: 10000 },
+          }}
         >
           <Box sx={{ m: 12 }}>
-            <Typography>Employee created !</Typography>
-            <Button>Booh</Button>
+            <Typography>
+              Employee created, c'est cool c'est bô la vie !
+            </Typography>
           </Box>
         </SuModal>
       )}
