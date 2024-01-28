@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { useSuModalTransition } from './useSuModalTransition';
 import { useCloseOnEscKey } from './useCloseOnEscKey';
 import './style/style.css';
