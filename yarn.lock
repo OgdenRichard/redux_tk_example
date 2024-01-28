@@ -3005,10 +3005,10 @@ set-function-name@^2.0.0, set-function-name@^2.0.1:
     functions-have-names "^1.2.3"
     has-property-descriptors "^1.0.0"
 
-seumodal@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/seumodal/-/seumodal-1.0.0.tgz#9beb9482c0ba2924874ad5160cc675a090640763"
-  integrity sha512-yrRMIejcOndWb7uwmPicg5FUa2Mx5BX6njwINZ5nFctZQKdTZXqw37dGFkyrEQDixK+pwIlFqBjhkSXcyaMVRQ==
+seumodal@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/seumodal/-/seumodal-1.0.3.tgz#16d6066150c7b5bc1b6a7060227cf6ce52aca64d"
+  integrity sha512-a6iQGJbIRG9uvy6+x3bsUJPhyFoaqjqCKxu1lKXDOKPi0y3F/BV4lPZBcFBidl+RDJd2zcZoAokXJj/J3Ddb4A==
 
 shebang-command@^2.0.0:
   version "2.0.0"

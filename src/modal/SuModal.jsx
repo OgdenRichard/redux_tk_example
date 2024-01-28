@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useSuModalTransition } from './useSuModalTransition';
 import { useCloseOnEscKey } from './useCloseOnEscKey';
 import './style/style.css';
@@ -54,4 +55,28 @@ export const SuModal = ({
       </div>
     </>
   );
+};
+
+SuModal.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]),
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  suModalTransition: PropTypes.bool,
+  closeButton: PropTypes.bool,
+  closeOnClickOut: PropTypes.bool,
+  closeOnEscKey: PropTypes.bool,
+  styleOptions: PropTypes.object,
+};
+
+SuModal.defaultProps = {
+  children: '',
+  suModalTransition: true,
+  closeButton: true,
+  closeOnClickOut: true,
+  closeOnEscKey: true,
+  styleOptions: {},
 };
