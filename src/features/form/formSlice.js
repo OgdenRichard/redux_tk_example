@@ -53,8 +53,8 @@ const formSlice = createSlice({
       state.formdata.department.val = action.payload;
       state.formdata.department.error = state.formdata.department.val === '';
     },
-    closeModal: (state, action) => {
-      state.showModal = action.payload;
+    displayModal: (state, action) => {
+      state.showModal = action.modal;
     },
     submitForm: (state) => {
       if (
@@ -100,6 +100,6 @@ export const {
   setState,
   setZipCode,
   setDepartment,
-  closeModal,
+  displayModal,
   submitForm,
 } = formSlice.actions;

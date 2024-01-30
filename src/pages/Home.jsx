@@ -4,13 +4,13 @@ import { Box, Typography } from '@mui/material';
 import { SuModal } from 'sumodal';
 import { PageTitle } from '../components/PageTitle';
 import { FormView } from '../features/form/FormView';
-import { closeModal } from '../features/form/formSlice';
+import { displayModal } from '../features/form/formSlice';
 
 export const Home = () => {
   const dispatch = useDispatch();
   const showModal = useSelector((state) => state.employees.showModal);
   const toggleModal = useCallback(() => {
-    dispatch(closeModal(false));
+    dispatch(displayModal(false));
   }, [dispatch]);
 
   return (
@@ -21,7 +21,7 @@ export const Home = () => {
         <SuModal
           isOpen={showModal}
           setIsOpen={toggleModal}
-          closeOnEscKey={false}
+          // closeOnEscKey={false}
           styleOptions={{
             background: { zIndex: 10000 },
           }}

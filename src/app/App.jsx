@@ -52,7 +52,7 @@ function App({ children }) {
         <RouterProvider router={router} />
         {children}
 
-        <Stack className="switchmode" direction="row" sx={{ mt: 1.5, ml: 1.5 }}>
+        <Stack className="switchmode" direction="row" sx={{ mt: 1.5, mr: 1.5 }}>
           {mode === 'dark' ? (
             <LightModeIcon
               fontSize="small"
