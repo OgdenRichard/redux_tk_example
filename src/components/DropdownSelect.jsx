@@ -1,3 +1,4 @@
+import * as PropTypes from 'prop-types';
 import {
   FormControl,
   InputLabel,
@@ -47,4 +48,21 @@ export const DropdownSelect = ({
       </FormControl>
     </>
   );
+};
+
+DropdownSelect.propTypes = {
+  data: PropTypes.array.isRequired,
+  datakey: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  reducer: PropTypes.func.isRequired,
+  storeVal: PropTypes.string.isRequired,
+  keyAsVal: PropTypes.bool,
+  required: PropTypes.bool,
+  error: PropTypes.bool,
+};
+
+DropdownSelect.defaultProps = {
+  keyAsVal: false,
+  required: false,
+  error: false,
 };

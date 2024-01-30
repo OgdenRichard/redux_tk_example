@@ -1,3 +1,4 @@
+import * as PropTypes from 'prop-types';
 import { useState, useMemo } from 'react';
 import {
   createBrowserRouter,
@@ -72,3 +73,15 @@ function App({ children }) {
 }
 
 export default App;
+
+App.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
+  ]),
+};
+
+App.defaultProps = {
+  children: '',
+};
