@@ -1,3 +1,4 @@
+import * as PropTypes from 'prop-types';
 import { TextField } from '@mui/material';
 
 export const TableFilter = ({ filter, setFilter }) => {
@@ -14,4 +15,13 @@ export const TableFilter = ({ filter, setFilter }) => {
       />
     </>
   );
+};
+
+TableFilter.propTypes = {
+  filter: PropTypes.string,
+  setFilter: PropTypes.func.isRequired,
+};
+
+TableFilter.defaultProps = {
+  filter: undefined,
 };
