@@ -53,7 +53,6 @@ export const FormView = () => {
             error={firstname.error}
             variant="outlined"
             label="First Name"
-            color="secondary"
             value={firstname.val}
             fullWidth
             helperText={firstname.error ? 'Required' : ''}
@@ -64,7 +63,6 @@ export const FormView = () => {
             error={lastname.error}
             variant="outlined"
             label="Last Name"
-            color="secondary"
             value={lastname.val}
             fullWidth
             helperText={lastname.error ? 'Required' : ''}
@@ -111,7 +109,6 @@ export const FormView = () => {
             <TextField
               variant="outlined"
               label="Street"
-              color="secondary"
               fullWidth
               value={street}
               onChange={(e) => dispatch(setStreet(e.target.value))}
@@ -119,7 +116,6 @@ export const FormView = () => {
             <TextField
               variant="outlined"
               label="City"
-              color="secondary"
               fullWidth
               value={city}
               onChange={(e) => dispatch(setCity(e.target.value))}
@@ -142,7 +138,6 @@ export const FormView = () => {
               variant="outlined"
               type="number"
               label="Zip Code"
-              color="secondary"
               fullWidth
               value={zipcode}
               onChange={(e) => dispatch(setZipCode(e.target.value))}
