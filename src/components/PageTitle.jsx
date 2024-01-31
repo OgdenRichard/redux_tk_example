@@ -1,3 +1,4 @@
+import * as PropTypes from 'prop-types';
 import { Typography, Divider, Box } from '@mui/material';
 
 export const PageTitle = ({ title, variant, my }) => {
@@ -11,4 +12,15 @@ export const PageTitle = ({ title, variant, my }) => {
       </Box>
     </>
   );
+};
+
+PageTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  variant: PropTypes.string,
+  my: PropTypes.number,
+};
+
+PageTitle.defaultProps = {
+  variant: 'h1',
+  my: 0,
 };
