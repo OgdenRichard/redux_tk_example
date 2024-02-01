@@ -1,8 +1,56 @@
-# React + Vite
+# rog_14_0124
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_Faites passer une librairie jQuery vers React_
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+yarn
+```
+
+## Visualiser l'application
+
+```
+yarn run dev
+```
+
+## Lancer un build et le visualiser
+
+```
+yarn run build
+yarn run preview
+```
+
+
+## Technologies
+
+### Framework Javascript & bundler
+- React + Vite
+
+### Routeur
+- React Router
+
+### State management
+- Redux
+- React-Redux
+- Redux toolkit
+
+### Framework CSS
+- Material UI
+
+## Conversion des composants jQuery
+
+### Dropdown Select
+- Material UI Select
+
+### Date picker
+- Material UI DatePicker
+
+### Table
+- Material UI Table, TableContainer, TableHead...
+- react-table https://www.npmjs.com/package/react-table
+
+### Modale
+
+Composant choisi pour la conversion en package npm
+- sumodal (v1.0.7)  https://www.npmjs.com/package/sumodal
