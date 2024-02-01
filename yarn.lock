@@ -3115,10 +3115,10 @@ stylis@4.2.0:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-4.2.0.tgz#79daee0208964c8fe695a42fcffcac633a211a51"
   integrity sha512-Orov6g6BB1sDfYgzWfTHDOxamtX1bE/zo104Dh9e6fqJ3PooipYyfJ0pUmrZO2wAvO8YbEyeFrkV91XTsGMSrw==
 
-sumodal@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/sumodal/-/sumodal-1.0.5.tgz#56e701d636b6a8f6c640329badf02cecabb20f82"
-  integrity sha512-xLxgwwu4XNXQdNmRXHo+A0Zf9Onq615OWZW+f21oNGPoQmJRkaORHf1tHkfqKiDkG/MYa7gO8kcRs9LT/XtRHg==
+sumodal@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/sumodal/-/sumodal-1.0.7.tgz#00c58961b61c8a7414d660f3e72243fb7d11372c"
+  integrity sha512-8YQgLUqgtoAQ0DTJ5pEI3AGaaR8tPK3JAl6eAk13gFX9Z3jjkai3l8U1914uulK7kUG0IdVn9PkGcblmAOHYnw==
 
 supports-color@^5.3.0:
   version "5.5.0"

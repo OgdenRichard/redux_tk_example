@@ -27,7 +27,7 @@
     "react-router-dom": "^6.20.0",
     "react-table": "^7.8.0",
     "redux": "^4.2.1",
-    "sumodal": "^1.0.5"
+    "sumodal": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
