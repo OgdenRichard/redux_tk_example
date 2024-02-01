@@ -6,6 +6,7 @@ import {
   Typography,
   Box,
 } from '@mui/material';
+import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import { DatePicker } from '@mui/x-date-pickers';
 import { DropdownSelect } from '../../components/DropdownSelect';
@@ -77,7 +78,7 @@ export const FormView = () => {
           <DatePicker
             label="Date of Birth"
             slotProps={{ textField: { fullWidth: true } }}
-            value={birthdate}
+            value={birthdate ? dayjs(birthdate) : null}
             onAccept={(val) =>
               dispatch(setBirthDate(val ? val.toISOString(true) : null))
             }
@@ -85,7 +86,7 @@ export const FormView = () => {
           <DatePicker
             label="Start Date"
             slotProps={{ textField: { fullWidth: true } }}
-            value={startdate}
+            value={startdate ? dayjs(startdate) : null}
             onAccept={(val) =>
               dispatch(setStartDate(val ? val.toISOString(true) : null))
             }
