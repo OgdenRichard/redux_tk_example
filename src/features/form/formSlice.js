@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { mockTableData } from '../../utils/populateWithMock';
 
 const initialState = {
   rowId: 0,
@@ -14,7 +15,7 @@ const initialState = {
     state: '',
     zipcode: '',
   },
-  data: [],
+  data: mockTableData(),
 };
 
 const formSlice = createSlice({

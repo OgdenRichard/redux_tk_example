@@ -15,12 +15,6 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-/* const store = configureStore({
-  reducer: {
-    employees: formReducer,
-  },
-}); */
-
 const store = configureStore({
   reducer: persistedReducer,
   middleware: [thunk],
@@ -28,5 +22,3 @@ const store = configureStore({
 
 export default store;
 export const persistor = persistStore(store);
-
-// export default store;
