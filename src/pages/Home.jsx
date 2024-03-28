@@ -21,7 +21,7 @@ export const Home = () => {
         <SuModal
           isOpen={showModal}
           setIsOpen={toggleModal}
-          // closeOnEscKey={false}
+          closeOnEscKey={false}
           styleOptions={{
             background: { zIndex: 10000 },
           }}
