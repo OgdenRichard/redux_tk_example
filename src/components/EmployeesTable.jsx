@@ -25,16 +25,12 @@ import {
 } from 'react-table';
 import { useSelector } from 'react-redux';
 import { TableFilter } from './TableFilter';
-import { mockTableData } from '../utils/populateWithMock';
 import COLUMNS from '../data/employeesColumns';
-import { USE_MOCK } from '../config/settings';
 
 export const EmployeesTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const formdata = useSelector((state) => state.employees.data);
-  const mockedEmployees = useMemo(() => mockTableData(), []);
-  const employees = USE_MOCK ? mockedEmployees : formdata;
-  const data = useMemo(() => employees, [employees]);
+  const data = useMemo(() => formdata, [formdata]);
   const {
     getTableProps,
     getTableBodyProps,
