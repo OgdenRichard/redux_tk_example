@@ -2,7 +2,24 @@
 
 [Preview](https://ogdenrichard.github.io/redux_tk_example/)
 
-## Installation
+## Contexte
+Projet développé dans le cadre de la formation diplômante Concepteur / Développeur d'Applications | Javascript / React.
+
+## Objet
+Implémenter une single page application stateful en utilisant React.
+
+## Fonctionnalités
+
+- Site responsive
+- Modes sombre / clair
+- Table scrollable horizontalement
+- Choix de la pagination
+- Recherche textuelle
+- Tri des colonnes
+- Pagination dynamique
+- Persistance des données avec Redux Toolkit
+
+## Installation locale
 
 ```
 yarn
@@ -36,23 +53,6 @@ yarn run preview
 
 ### Framework CSS
 - Material UI
-
-## Conversion des composants jQuery
-
-### Dropdown Select
-- Material UI Select
-
-### Date picker
-- Material UI DatePicker
-
-### Table
-- Material UI Table, TableContainer, TableHead...
-- react-table https://www.npmjs.com/package/react-table
-
-### Modale
-
-Composant choisi pour la conversion en package npm
-- sumodal (v1.0.7)  https://www.npmjs.com/package/sumodal
 
 ## Utiliser des données mockées
 
