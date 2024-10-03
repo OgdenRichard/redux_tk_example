@@ -1,6 +1,6 @@
-# rog_14_0124
+# Single page application stateful | React + RTK
 
-_Faites passer une librairie jQuery vers React_
+[Preview](https://ogdenrichard.github.io/redux_tk_example/)
 
 ## Installation
 
