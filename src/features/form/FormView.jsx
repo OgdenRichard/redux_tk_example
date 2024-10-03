@@ -159,7 +159,10 @@ export const FormView = () => {
           color="primary"
           fullWidth
           sx={{ mt: 2 }}
-          onClick={() => dispatch(submitForm())}
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(submitForm());
+          }}
         >
           Save
         </Button>
