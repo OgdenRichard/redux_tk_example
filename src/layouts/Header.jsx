@@ -24,9 +24,9 @@ export const Header = () => {
             <Box>
               <figure>
                 <NavLink to="/home" className="header__logo">
-                  <img src={logo} alt="Wealth Health logo" />
+                  <img src={logo} alt="Soylent Green logo" />
                 </NavLink>
-                <figcaption>Wealth Health</figcaption>
+                <figcaption>Soylent Green</figcaption>
               </figure>
             </Box>
             <Stack

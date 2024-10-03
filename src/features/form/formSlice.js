@@ -69,6 +69,7 @@ const formSlice = createSlice({
         state.formdata.id = state.rowId;
         state.data.push(state.formdata);
         state.formdata = {
+          id: state.rowId,
           firstname: { val: '', error: false },
           lastname: { val: '', error: false },
           department: { val: '', error: false },

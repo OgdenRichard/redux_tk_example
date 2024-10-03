@@ -2,6 +2,10 @@ import { format } from 'date-fns';
 
 const COLUMNS = [
   {
+    Header: 'Id',
+    accessor: 'id',
+  },
+  {
     Header: 'First Name',
     accessor: 'firstname.val',
   },

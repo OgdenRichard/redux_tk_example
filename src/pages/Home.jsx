@@ -15,13 +15,13 @@ export const Home = () => {
 
   return (
     <>
-      <PageTitle title="HRnet" variant="h3" my={5} />
+      <PageTitle title="HR management" variant="h3" my={5} />
       <FormView />
       {showModal && (
         <SuModal
           isOpen={showModal}
           setIsOpen={toggleModal}
-          closeOnEscKey={false}
+          closeOnEscKey
           styleOptions={{
             background: { zIndex: 10000 },
           }}
