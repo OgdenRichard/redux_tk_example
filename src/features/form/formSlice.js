@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { mockTableData } from '../../utils/populateWithMock';
+import { MOCK_LENGTH, USE_MOCK } from '../../config/settings';
 
 const initialState = {
-  rowId: 0,
+  rowId: USE_MOCK ? MOCK_LENGTH : 0,
   showModal: false,
   formdata: {
     firstname: { val: '', error: false },
@@ -15,7 +16,7 @@ const initialState = {
     state: '',
     zipcode: '',
   },
-  data: mockTableData(),
+  data: USE_MOCK ? mockTableData() : [],
 };
 
 const formSlice = createSlice({
